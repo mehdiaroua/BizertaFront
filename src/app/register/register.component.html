@@ -1,0 +1,35 @@
+
+<form [formGroup]="signupForm" (ngSubmit)="signup()" class="form">
+    <div class="container">
+      <div class="left">
+        <div class="header">
+          <h2 class="animation a1">Welcome</h2>
+          <h4 class="animation a2">Sign up to your new account</h4>
+        </div>
+        <div class="form">
+          <input type="type" id="username" formControlName="username" class="form-field animation a3" placeholder="Username"> <br/>
+          <div *ngIf="signupForm.controls['username'].errors?.['required'] && signupForm.controls['username'].touched" class="text-danger">
+            Please enter a username
+          </div>
+          <input type="password" id="password" formControlName="password" class="form-field animation a4" placeholder="Password"> <br/>
+            <div *ngIf="signupForm.controls['password'].errors?.['required'] && signupForm.controls['password'].touched"
+              class="text-danger">
+              Please enter a password
+            </div>
+            <input type="email" id="email" formControlName="email" class="form-field animation a4" placeholder="Email"> <br/>
+            <div *ngIf="signupForm.controls['email'].errors?.['required'] && signupForm.controls['email'].touched"
+              class="text-danger">
+              Please enter an email address
+            </div>
+            
+            
+          
+          <button class="animation a6">Sign up</button>
+          <p class="animation a5"><a href="/login">Already have an Account ? </a></p>
+
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+
+

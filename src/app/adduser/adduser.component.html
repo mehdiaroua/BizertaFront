@@ -1,0 +1,46 @@
+
+
+
+
+<div class="container">
+    <div class="col-md-12 content-center">
+        <div class="card card-register card-plain">
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+
+
+                    <input type="text" id="username" formControlName="username" class="form-control" pInputText pTooltip="Enter your username" placeholder="Username">
+
+
+
+                  <input type="email" id="email" formControlName="email" pInputText pTooltip="Enter your email" placeholder="Email"  class="form-control" />
+
+                  <form [formGroup]="signupForm">
+
+                    <p-password formControlName="password" placeholder="Password" ></p-password>
+
+                </form>
+
+<div class="form-group">
+
+  <input type="text" id="phone" formControlName="phone" pInputText pTooltip="Enter your Phone number" placeholder="PhoneNumber"  class="form-control" />
+
+
+</div>
+
+<div class="form-group">
+
+  <select id="role" formControlName="role" placeholder="Select Role..." class="form-control" required>
+    <option value="user">User</option>
+    <option value="admin">Admin</option>
+    
+  </select>
+</div>
+                <div class="footer text-center">
+                  <button type="submit" class="btn btn-primary btn-round btn-lg btn-block"  (click)="onSubmit()" >Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+

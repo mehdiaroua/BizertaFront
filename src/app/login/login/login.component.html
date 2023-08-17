@@ -1,0 +1,22 @@
+
+<form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="container">
+      <div class="left">
+        <div class="header">
+          <h2 class="animation a1">Welcome Back</h2>
+        </div>
+        <div class="form">
+  <input class="form-field animation a3" id="txt-input" type="text" placeholder="Username" required [(ngModel)]="form.username"
+    name="username" #usernameInput="ngModel">
+          <input class="form-field animation a4" type="password" placeholder="Password" id="pwd" name="password" required
+            [(ngModel)]="form.password" name="password" #passwordInput="ngModel">
+          <div *ngIf="formSubmitted && passwordInput.invalid" class="error-message error">
+            Password is required.
+          </div>
+          <button class="animation a6">LOGIN</button> <br/>
+          <p class="animation a5"><a href="/register" >Don't have an Account ? </a></p>
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+  

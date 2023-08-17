@@ -1,0 +1,156 @@
+<section class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hero__categories">
+                    <div class="hero__categories__all">
+                        <i class="fa fa-bars"></i>
+                        <span>All departments</span>
+                    </div>
+                    <ul>
+                      <li><a href="#" routerLink="/dash">User</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-lg-9">
+
+
+              <div class="hero__search">
+                <div class="hero__search__form">
+                  <form (ngSubmit)="searchUsers()">
+                    <div class="form-group">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" [(ngModel)]="username">
+                    <button type="submit" class="site-btn" >SEARCH</button>
+                  </div>
+                  </form>
+                  </div>
+
+
+
+            </div>
+
+
+                <div class="container edit-form" *ngIf="isEditing">
+                  <h2>Edit User</h2>
+                  <form (ngSubmit)="onUpdate()">
+                    <div class="form-group">
+
+                      <label for="username">Username:</label>
+                      <input type="text" class="form-control" id="username" name="username" [(ngModel)]="selectedUser.username">
+
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email:</label>
+                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="selectedUser.email">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary"  (click)="onCancel()">Save</button>
+                    <button type="button" class="btn btn-default" (click)="onCancel()">Cancel</button>
+                  </form>
+                </div>
+
+
+                <div class="container">
+
+                  <p-toolbar styleClass="mb-4 gap-2">
+                    <ng-template pTemplate="left">
+
+                    </ng-template>
+
+                  
+                </p-toolbar>
+                  <div class="card">
+                    <p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
+                      <ng-template pTemplate="header">
+                          <tr>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Password</th>
+                              <th>Role</th>
+                              <th>Actions</th>
+
+                          </tr>
+                      </ng-template>
+                      <ng-template pTemplate="body" let-user>
+                          <tr>
+                              <td>{{ user.username }}</td>
+                              <td>{{ user.email }}</td>
+                              <td>{{ user.password }}</td>
+                              <td>
+                                <mat-form-field appearance="fill">
+                                  <mat-label>Select a role</mat-label>
+                                  <mat-select [(ngModel)]="user.selectedRole.name" (selectionChange)="onUpdateRole(user.id, user.selectedRole.name)">
+                                    <mat-option *ngFor="let role of roles" [value]="role.name">
+                                      {{ role.name === 'ROLE_USER' ? 'User' : (role.name === 'ROLE_ADMIN' ? 'Admin'  : role.name) }}
+                                    </mat-option>
+                                  </mat-select>
+                                </mat-form-field>
+                              </td>
+                              <td>
+                                <i class="fa fa-edit" (click)="onEdit1(user)"></i>
+                                <i class="fa fa-trash" (click)="onDelete(user.id)"></i>
+
+                               
+                          </tr>
+                      </ng-template>
+                  </p-table>
+                    <!--<p-table
+                        #dt2
+                        [value]="users"
+                        dataKey="id"
+                        [rows]="5"
+                        [showCurrentPageReport]="true"
+                        [rowsPerPageOptions]="[10, 25, 50]"
+                        [paginator]="true"
+                        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                        [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+                        [tableStyle]="{ 'min-width': '50rem' }"
+                        >
+
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width:10%">Name</th>
+                                <th style="width:12%">Email</th>
+                                <th style="width:15%">Role</th>
+                                <th style="width:22%">Actions</th>
+
+                            </tr>
+
+                        </ng-template>
+                        <ng-template pTemplate="body" let-user>
+                          <tr>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>
+                              <mat-form-field appearance="fill">
+                                <mat-label>Select a role</mat-label>
+                                <mat-select [(ngModel)]="user.selectedRole.name" (selectionChange)="onUpdateRole(user.id, user.selectedRole.name)">
+                                  <mat-option *ngFor="let role of roles" [value]="role.name">
+                                    {{ role.name === 'ROLE_USER' ? 'User' : (role.name === 'ROLE_ADMIN' ? 'Admin' : (role.name === 'ROLE_RESTAURANT' ? 'Restaurant' : (role.name === 'ROLE_FOURNISSEUR' ? 'Fournisseur' : role.name))) }}
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                            </td>
+                         
+                            <td>
+                              <p-button icon="pi pi-pencil" styleClass="p-button-rounded p-button-info p-button-text p-button-raised" (click)="onEdit1(user)"></p-button>
+<p-button icon="pi pi-times" styleClass="p-button-rounded p-button-danger p-button-text p-button-raised"(click)="onDelete(user.id)"></p-button>
+
+                          </tr>
+                        </ng-template>
+                        <ng-template pTemplate="emptymessage">
+
+                        </ng-template>
+                    </p-table>-->
+                </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+              </section>
+              
