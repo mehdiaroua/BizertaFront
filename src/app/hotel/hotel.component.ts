@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Hotel } from '../models/hotel';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
@@ -9,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./hotel.component.css'],
   providers:[DataService]
 })
-export class HotelComponent {
-hotels!:Hotel[];
+export class HotelComponent implements OnInit {
+hotels:Hotel[] = [];
 pays: string = '';
   nom: string = '';
   showCategories = false;
+  id: number = 1; // Set the ID you want to retrieve here
+
 
 constructor(private dataService:DataService,private R:Router){}
 
@@ -24,6 +26,7 @@ toggleCategories() {
 
 ngOnInit() {
 this.getAllHotels();
+this.getHotelById();
 
 }
 
@@ -48,5 +51,12 @@ searchHotels(): void {
         console.error('An error occurred:', error);
       }
     );
+}
+getHotelById(): void {
+  this.dataService.getHotelById(this.id)
+    .subscribe((hotels: Hotel) => {
+      // Assuming your getMaisonById API returns a single Maison, not an array
+      this.hotels.push(hotels); // Add the retrieved Maison to the maisons array
+    });
 }
 }

@@ -1,0 +1,40 @@
+<section class="blog-details spad">
+    <div class="container">
+        <i class="pi pi-chevron-left" (click)="goBack()" style="font-size: 2rem"></i>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-5 order-md-1 order-2">
+                <div class="blog__sidebar">
+                    <div class="blog__sidebar__search">
+                        <form action="#">
+                            <input type="text" placeholder="Search...">
+                            <button type="submit"><span class="icon_search"></span></button>
+                        </form>
+                    </div>
+                    <div class="blog__sidebar__item">
+                        <h4>Categories</h4>
+                        <ul>
+                            <li><a  routerLink="/hotels">Hotels</a></li>
+                          <li><a routerLink="/voyage">Voyages</a></li>
+                          <li><a  routerLink="/plage">Plages</a></li>
+                        </ul>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-7 order-md-1 order-1">
+                <div class="blog__details__text">
+                    <img [src]="'data:image/jpeg;base64,' + maison?.imageBase64" alt=""
+                    style="width: 100%; max-width: 600px; height: auto;">
+                    
+                    <p>{{maison?.nom}}</p>
+                    <h3>{{maison?.pays}}</h3>
+                    <p>{{maison?.description}}</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog Details Section End -->

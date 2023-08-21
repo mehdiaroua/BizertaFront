@@ -1,0 +1,215 @@
+<p-toast></p-toast>
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+
+<section class="hero">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+              <div class="hero__categories">
+                  <div class="hero__categories__all">
+                      <i class="fa fa-bars"></i>
+                      <span>All departments</span>
+                  </div>
+                  <ul>
+                    <li><a href="#" routerLink="/dash">User</a></li>
+
+
+                      <li><a href="#" routerLink="/hotelb">Hotel</a></li>
+                      <li><a href="#" routerLink="/plageb">Plage</a></li>
+                      <li><a href="#" routerLink="/maisonb">Voyage</a></li>
+
+
+
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-9">
+              <div class="hero__search">
+                  <div class="hero__search__form">
+                    <form>
+                      <div class="form-group">
+                      <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" >
+                      <button type="submit" class="site-btn" >SEARCH</button>
+                    </div>
+                    </form>
+                    </div>
+                  </div>
+
+
+
+<p-toolbar styleClass="mb-4 gap-2">
+    <ng-template pTemplate="left">
+       <button pButton pRipple  class="p-button-success mr-2" (click)="show()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+
+    </ng-template>
+
+    <ng-template pTemplate="right">
+        <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="mr-2 inline-block"></p-fileUpload>
+        <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+    </ng-template>
+</p-toolbar>
+
+<p-table
+    #dt
+    [value]="hotel"
+    [paginator]="true"
+    [rows]="10"
+    editMode="row"
+    [globalFilterFields]="['nom', 'description']"
+    [tableStyle]="{ 'min-width': '75rem' }"
+    [(selection)]="selectedProducts"
+    [rowHover]="true"
+    dataKey="id"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [showCurrentPageReport]="true">
+
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="nom" style="min-width:15rem;width:20%">Name <p-sortIcon field="nom"></p-sortIcon></th>
+            <th style="width:20%">Description</th>
+            <th pSortableColumn="prix" style="width:20%">Price <p-sortIcon field="prix"></p-sortIcon></th>
+            <th style="width:20%">Pays</th>
+            <th style="width:20%">Image</th>
+
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-hotel let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="hotel">
+        <td>
+        <p-cellEditor>
+          <ng-template pTemplate="input">
+            <input pInputText type="text" [(ngModel)]="hotel.nom">
+        </ng-template>
+          <ng-template pTemplate="output">
+          {{hotel.nom}}
+      </ng-template>
+        </p-cellEditor>
+      </td>
+      <td>
+    <p-cellEditor>  <ng-template pTemplate="input">
+      <input pInputText type="text" [(ngModel)]="hotel.description">
+  </ng-template>
+    <ng-template pTemplate="output">
+    {{hotel.description}}
+</ng-template>
+     </p-cellEditor>
+    </td>
+       <td>
+      <p-cellEditor>
+        <ng-template pTemplate="input">
+          <input pInputText type="text" [(ngModel)]="hotel.prix">
+      </ng-template>
+        <ng-template pTemplate="output">
+        {{hotel.prix | currency: 'TND'}}
+    </ng-template>
+   </p-cellEditor>
+  </td>
+
+
+      <td>
+  <p-cellEditor>  <ng-template pTemplate="input">
+    <input pInputText type="text" [(ngModel)]="hotel.pays">
+</ng-template>
+  <ng-template pTemplate="output">
+  {{hotel.pays}}
+</ng-template> </p-cellEditor>
+</td>
+
+
+
+
+
+
+
+
+<td>
+  <p-cellEditor>  <ng-template pTemplate="input">
+    <input type="file" name="image" (change)="onFileSelected($event)">
+</ng-template>
+  <ng-template pTemplate="output">
+    <img [src]="'data:image/jpeg;base64,' + hotel.imageBase64" [alt]="hotel.nom"/>
+</ng-template> </p-cellEditor>
+</td>
+
+
+
+
+
+    <td>
+      <p-cellEditor>
+          <td><img [src]="'data:image/jpeg;base64,' + hotel.imageBase64" [alt]="hotel.nom" width="50" class="shadow-4" /></td>
+
+        </p-cellEditor>
+      </td>
+
+
+
+
+          <td>
+            <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(hotel)" class="p-button-rounded p-button-warning"></button>
+            <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(hotel)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+            <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(hotel, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+              <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-danger" (click)="deleteProduit(hotel)"></button>
+            <!--  <button pButton pRipple icon="pi pi-plus" class="p-button-rounded p-button-success" routerLink="{{produit.id}}"></button>-->
+            <button pButton pRipple icon="pi pi-plus" class="p-button-rounded p-button-success" routerLink="{{hotel.id}}"></button>
+
+          </td>
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">In total there are {{ hotel ? hotel.length : 0 }} produit.</div>
+  </ng-template>
+    <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">In total there are {{ hotel ? hotel.length : 0 }} products.</div>
+    </ng-template>
+</p-table>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

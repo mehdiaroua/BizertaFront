@@ -1,0 +1,43 @@
+<p-toast></p-toast>
+<form (submit)="onSubmit()" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="nom">Nom :</label>
+    <input type="text" class="form-control" id="nom" [(ngModel)]="produit.nom" name="nom" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Description :</label>
+
+    <textarea name="description" id="description" cols="30" rows="10" class="form-control" [(ngModel)]="produit.description" required></textarea>
+  </div>
+  <div class="form-group">
+    <label for="prix">Prix :</label>
+    <input type="text" class="form-control" id="prix" [(ngModel)]="produit.prix" name="prix" required>
+  </div>
+  <div class="form-group">
+    <label for="ingredient">Pays :</label>
+    <input type="text" class="form-control" id="ingredient" [(ngModel)]="produit.pays" name="pays" required>
+  </div>
+
+
+  
+
+
+
+  <div class="form-group">
+    <label for="image">Image :</label>
+    <input type="file" class="form-control-file" id="image" (change)="onFileSelected($event)" required>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Ajouter</button>
+
+
+
+
+
+
+
+
+
+
+</form>

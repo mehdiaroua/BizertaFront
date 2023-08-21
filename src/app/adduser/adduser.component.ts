@@ -34,7 +34,7 @@ export class AdduserComponent {
     this.user.password = this.signupForm.value.password;
     this.user.role = [this.signupForm.value.role];
 
-    this.http.post<any>('http://localhost:8080/api/test/add', this.user)
+    this.http.post<any>('http://localhost:8080/api/auth/add', this.user)
       .subscribe(
         response => {
           console.log('User registered:', response);

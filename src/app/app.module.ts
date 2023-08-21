@@ -42,6 +42,21 @@ import { CardModule } from 'primeng/card';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { TableModule } from 'primeng/table';
 import { PlageComponent } from './plage/plage.component';
+import { FooterComponent } from './footer/footer.component';
+import { AboutComponent } from './about/about.component';
+import { HomeComponent } from './home/home.component';
+import { VoyageComponent } from './voyage/voyage.component';
+import { VoyageDetailComponent } from './voyage-detail/voyage-detail.component';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
+import { PlageDetailComponent } from './plage-detail/plage-detail.component';
+import { HotelBackComponent } from './hotel-back/hotel-back.component';
+import { AddhotelComponent } from './addhotel/addhotel.component';
+import { AddplageComponent } from './addplage/addplage.component';
+import { PlageBackComponent } from './plage-back/plage-back.component';
+import { VoyageBackComponent } from './voyage-back/voyage-back.component';
+import { AddvoyageComponent } from './addvoyage/addvoyage.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+
 
 
 
@@ -68,6 +83,21 @@ import { PlageComponent } from './plage/plage.component';
     AdduserComponent,
     DashboardComponent,
     PlageComponent,
+    FooterComponent,
+    AboutComponent,
+    HomeComponent,
+    VoyageComponent,
+    VoyageDetailComponent,
+    HotelDetailComponent,
+    PlageDetailComponent,
+    HotelBackComponent,
+    AddhotelComponent,
+    AddplageComponent,
+    PlageBackComponent,
+    VoyageBackComponent,
+    AddvoyageComponent,
+    ProfileUserComponent,
+    
     
   ],
   imports: [

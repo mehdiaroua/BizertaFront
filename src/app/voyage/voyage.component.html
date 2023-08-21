@@ -1,0 +1,80 @@
+<!-- Blog Section Begin -->
+
+<section class="hero">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="hero__categories">
+                    <div class="hero__categories__all">
+                        <i class="fa fa-bars"></i>
+                        <span>All offers</span>
+                    </div>
+                    <ul>
+                        <li><a  routerLink="/hotels">Hotels</a></li>
+                          <li><a routerLink="/voyage">Voyages</a></li>
+                          <li><a  routerLink="/plage">Plages</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="hero__search">
+                    <div class="hero__search__form">
+                        <form action="#">
+                            <div class="hero__search__categories">
+                                All Categories
+                                <span class="arrow_carrot-down"></span>
+                            </div>
+                            <input type="text" placeholder="What do you need?" [(ngModel)]="nom" name="nom">
+                            <button type="submit" class="site-btn">SEARCH</button>
+                        </form>
+                    </div>
+                    <div class="hero__search__phone">
+                        <div class="hero__search__phone__icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="hero__search__phone__text">
+                            <h5>72 424 834</h5>
+                            <span>support 24/7 time</span>
+                        </div>
+                    </div>
+                </div>
+                
+               
+            </div>
+            <div class="col-lg-6 col-md-7">
+                
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6" *ngFor="let maison of maisons">
+                        <div class="blog__item">
+                            <div class="blog__item__pic">
+                                <img [src]="'data:image/jpeg;base64,' + maison.imageBase64" alt="Product" class="img-responsive" />
+                            </div>
+                            <div class="blog__item__text">
+                                <ul>
+                                    <li><i class="fa fa-calendar-o"></i> {{maison.nom}}</li>
+                                </ul>
+                                <h5>{{maison.pays}}</h5>
+                                <p>{{maison.description}}</p>
+                                <a [routerLink]="['/mdetail', maison.id]" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+                    
+                    
+                    <div class="col-lg-12">
+                        <div class="product__pagination blog__pagination">
+                            <a href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</section>

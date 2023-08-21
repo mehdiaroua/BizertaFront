@@ -861,7 +861,7 @@ ol {
 	bottom: -2px;
 	width: 100%;
 	height: 2px;
-	background: #7fad39;
+	background: #3B6CBA;
 	content: "";
 	opacity: 0;
 }
@@ -909,8 +909,8 @@ ol {
 }
 
 .featured__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #3B6CBA;
+	border-color: #3B6CBA;
 }
 
 .featured__item__pic__hover li:hover a i {
@@ -1345,8 +1345,8 @@ ol {
 }
 
 .product__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #3B6CBA;
+	border-color: #3B6CBA;
 }
 
 .product__item__pic__hover li:hover a i {
@@ -1544,7 +1544,7 @@ ol {
 }
 
 .filter__option span:hover {
-	color: #7fad39;
+	color: #3B6CBA;
 }
 
 .product__item {
@@ -1585,8 +1585,8 @@ ol {
 }
 
 .product__item__pic__hover li:hover a {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #3B6CBA;
+	border-color: #3B6CBA;
 }
 
 .product__item__pic__hover li:hover a i {
@@ -1666,8 +1666,8 @@ ol {
 
 .product__pagination a:hover,
 .blog__pagination a:hover {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #3B6CBA;
+	border-color: #3B6CBA;
 	color: #ffffff;
 }
 
@@ -2175,8 +2175,8 @@ ol {
 }
 
 .checkout__input__checkbox label input:checked~.checkmark {
-	background: #7fad39;
-	border-color: #7fad39;
+	background: #3B6CBA;
+	border-color: #3B6CBA;
 }
 
 .checkout__input__checkbox label input:checked~.checkmark:after {
@@ -2403,7 +2403,7 @@ ol {
 }
 
 .blog__sidebar__item ul li a:hover {
-	color: #7fad39;
+	color: #3B6CBA;
 }
 
 .blog__sidebar__search {
@@ -2623,7 +2623,7 @@ ol {
 }
 
 .blog__details__widget .blog__details__social a:hover {
-	color: #7fad39;
+	color: #3B6CBA;
 }
 
 .blog__details__widget .blog__details__social a:last-child {
@@ -2741,7 +2741,7 @@ ol {
 }
 
 .footer__widget .footer__widget__social a:hover {
-	background: #7fad39;
+	background: #3B6CBA;
 	color: #ffffff;
 	border-color: #ffffff;
 }
@@ -2779,7 +2779,7 @@ ol {
 
 .contact__widget span {
 	font-size: 36px;
-	color: #7fad39;
+	color: #3B6CBA;
 }
 
 .contact__widget h4 {
@@ -2818,7 +2818,7 @@ ol {
 
 .map .map-inside i {
 	font-size: 48px;
-	color: #7fad39;
+	color: #3B6CBA;
 	position: absolute;
 	bottom: -75px;
 	left: 50%;
@@ -3075,7 +3075,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: #3B6CBA;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -3141,7 +3141,7 @@ ol {
 		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: transparent;
-		color: #7fad39;
+		color: #3B6CBA;
 	}
 	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
 	.humberger__menu__wrapper .slicknav_nav a {
@@ -3333,7 +3333,7 @@ ol {
 	.humberger__menu__cart ul li a span {
 		height: 13px;
 		width: 13px;
-		background: #7fad39;
+		background: #3B6CBA;
 		font-size: 10px;
 		color: #ffffff;
 		line-height: 13px;
@@ -3399,7 +3399,7 @@ ol {
 		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: transparent;
-		color: #7fad39;
+		color: #3B6CBA;
 	}
 	.humberger__menu__wrapper .slicknav_nav .slicknav_row,
 	.humberger__menu__wrapper .slicknav_nav a {
